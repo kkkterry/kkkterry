@@ -9,10 +9,24 @@ day11
   - str -> 다양한 타입으로변환 혹은 그 역과정을 수행하기 위해
   - 기초 데이터에 상응하는 객체 데이터 클래스를 가지고 있다.
   - (변수명).parse(변수명)
+  - boxing
+    - 기본 자료형의 데이터를 대응되는 래퍼 클래스로 만드는 동작
+    - int i = 10;
+      Integer wI = new Integer(a);
+  - unboxing
+    - 래퍼 클래스에서 기본 자료형으로의 변환
+    - Integer wI = new Integer(10);
+      int i = wI.intValue();     // Integer Unboxing 동작
+   - boxing과 unboxing사용이유
+     - 자바에서는 래퍼클래스(Integer, Float), 기본자료형(int, float)이 있는데
+       이후에 할 제네릭 부분에서 제네릭은 primitive type을 받지 않습니다.
+
+출처: https://ammff.tistory.com/20 [아메리카노가 그렇게 맛있답니다 여러분]
 
 - Timer
   - timer.schedule(timerTask객체, 시간(ms)); ms후 실행
   - timer.schedule(timerTask객체, xms, yms); xms후 yms마다 실행
+ 
 
 - Decimalformat
   - Decimalformat객체.format(변수); //객체는 출력형식을 가지고 있음
