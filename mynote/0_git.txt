@@ -1,0 +1,27 @@
+-------------------------------------------------------------------
+-git 설치 및 세팅
+1. git 로그인 -> 리파지토리 생성(start프로젝트) -> git 프로그램 설치
+   -> README.md 파일 생성
+
+2. README.md파일 위치에서 cmd열기 
+->git config --global user.name "kkkterry"(사용자이름)
+->git config --global user.email "sanghun1290@naver.com"(로그인시 사용주소)
+->git init
+->git add README.md (올릴 파일명)
+->git commit -m "first commit"(??)
+->git branch -M main
+->git remote add origin https://github.com/kkkterry/kkkterry.git(깃 주소)
+->git push -u origin main
+
+--------------------------------------------------------------------
+
+-세팅 후 올릴 경우
+->git init
+->git add 폴더명이나 파일명
+->git commit –m “05-10“ (??)(주로 날짜 기입)
+->git remote add origin git경로
+->git push -u origin main
+
+-------------------------------------------------------------------
+- 다른 컴퓨터로 업로드 원할 경우
+

@@ -1,0 +1,25 @@
+day9.
+패턴
+- 개발자 들이 객체지향 언어의 장점을 모아 가장 효율적으로 개발 할 수 있게
+  만들어둔 프레임
+- 싱글톤 패턴
+   - 어떤 클래스의 객체는 오직 하나인 유일한 객체를 만들어 여러가지 상황에서
+     동일한 객체에 접근하기 위해 만들어진 패턴
+   - 전역적인 접촉점을 제공하는 패턴
+
+API
+- 누군가가 만들어 놓은 기능들
+- String의 주요 기능들(메소드)
+  - String concat(String str) : 저장된 문자열과 str문자열을 결합
+  - String substring(int begin) : 시작위치부터 마지막까지의 문자열을 반환
+  - int length() : 문자열 길이를 반환
+  - String toUpperCase() : 대문자로 반환
+  - String toLowerCase() : 소문자로 반환
+  - char charAt(int index) : index 위치의 문자를 반환
+  - int indexOf(char ch) : 첫번째 ch문자의 위치를 반환
+  - int lastIndexOf(char ch) : 마지막 ch문자의 위치를 반환
+  - boolean equals(String str) : 지정된문자열과 str문자열이 같은지 비교
+  - boolean equalslgnoreCase(String str) : 대소문자구분없이 지정된문자열과 str문자열이 같은지 비교
+  - String trim() : 문자열 앞뒤 공백제거
+  - String replace(char old, char new) : 문자열 내의 old문자를 new문자로 반환
+  - String  repalceAll(String old, String new) : 문자열 내의 old문자열을 new로 반환

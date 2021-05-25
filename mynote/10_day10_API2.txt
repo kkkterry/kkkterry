@@ -1,0 +1,31 @@
+day10
+API
+- String의 단점(메모리 과소비)을 보완한 클래스
+  - StringBuffer & StringBuilder
+    - append(String str) : 문자열 str 추가
+    - insert(int index, String str) : 특정 index에 문자열 str 추가
+    - delete(int start, int end) : index위치 start부터 end앞 까지 삭제
+    - deleteCharAt(int index) : index위치의 특정 문자 하나 삭제
+    - int capacity() : 문자열 크기 반환
+    - ensureCapacity(int size) : 버퍼의 크기를 size만큼 늘리는 메소드
+    - trimToSize() : 과도한 버퍼 크기를 적당하게 줄이는 메소드
+
+- System.currentTimemillis() : 1970년도부터 현재까지의 밀리세컨(1/1,000초) 단위로 표시합니다.
+- Calendar & GregorianCalendar & Date
+  - Calendar : 싱글톤 페턴사용 - Calendar cal = Calendar.getInstance();
+  - GregorianCalendar : 생성자 사용가능
+  - Date : 생성자 사용가능
+    - SimpleDateFormat("형식"); 
+    - xxx.format(yyy.getTime());
+- Math
+  - 반올림, 올림, 버림
+     - (소수점에서) 올림 : Math.ceil(수)    - 반올림 : Math.round(수)    - 버림 : Math.floor(수)
+     - 1의자리 -> 10을 곱하고 나눠준다
+     - 소수점 2자리 -> 10을 나눠주고 곱해준다
+  - random
+    - 생성자로 변수 만들기
+    - Math.random() ->0 - 1사이 난수
+    - 변수.nextint(10) -> 0-10사이 정수 난수
+    - 변수.nextdouble(10) -> 1-10사이 실수 난수
+
+

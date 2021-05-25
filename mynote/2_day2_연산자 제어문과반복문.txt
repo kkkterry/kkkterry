@@ -1,0 +1,29 @@
+day2
+2. operator
+- 산술연산자:+, - ...
+- 증감연산자(단항연산자): ++, --
+- 관계연산자: >, <, ...
+- 논리연산자: &&, ||, !
+- 삼항연산자: (조건)?(참):(거짓)
+- 할당(대입)연산자: +=, -=, /=, *=, %=
+- 비트연산자 : &(and), |(or), ^(xor)
+* Scanner (api)
+- 사용자로 부터 입력을 받을때 사용함
+import java.util.Scanner (class파일이 존재하는 경로)
+Scanner scanner = new Scanner(System.in)  //초기화
+int su = scanner.nextInt();   //정수변수에 입력
+scanner.close();  //종료
+
+3. 제어문과 반복문
+1.제어문
+- if문류
+- switch문
+2.반복문
+- for
+- while
+- do while
+- continue와 break
+  -continue 반복문의 처음으로 간다
+  -break 반복문을 탈출한다
+* Math.random()
+-0이상 1미만의 임의의 수를 받음

@@ -1,0 +1,48 @@
+day11
+- API
+- Scanner
+  - 키보드에서 타이핑하는 문자열 또는 입출력 프로그래밍에서 값을 읽어올 때, 무엇인가를 얻어 올 때 사용
+  - Scanner.next(); -> 문자열 입력
+  - Scanner.nextLine(); -> \n이전 가지만 인식하고 그 뒤는 버린다.
+
+- Wrapper
+  - str -> 다양한 타입으로변환 혹은 그 역과정을 수행하기 위해
+  - 기초 데이터에 상응하는 객체 데이터 클래스를 가지고 있다.
+  - (변수명).parse(변수명)
+
+- Timer
+  - timer.schedule(timerTask객체, 시간(ms)); ms후 실행
+  - timer.schedule(timerTask객체, xms, yms); xms후 yms마다 실행
+
+- Decimalformat
+  - Decimalformat객체.format(변수); //객체는 출력형식을 가지고 있음
+ 
+- 예외처리
+- 종류 - 문법에러 - 실행에러(논리에러, 시스템에러, 예외사항)
+- 문법
+  - try ~ catch
+    - try{
+	- 익셉션이 발생할 가능성이 있는 명령문들
+      }catch(익셉션타입 익셉션변수){//여러게 가능
+	- 처리하는 명령문
+      }finally{
+ 	- 익셉션 발생 여부와 상관없이 맨 마지막에 실행할 명령문
+      }
+  - throws
+    - private void actionA() throws 예외종류 {
+      }
+- 강제로 예외 발생시키기
+   - throw new Exception(에러메세지);
+
+
+
+
+
+
+
+
+
+
+
+
+
