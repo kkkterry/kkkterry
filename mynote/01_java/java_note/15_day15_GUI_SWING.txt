@@ -1,16 +1,16 @@
-day14
+15_day15_GUI_SWING
 자바 GUI(Graphic User Interface)
-- AWT 컴포넌트
+- SWING 컴포넌트
   - 자바에서 그래픽 요소를 만들기 위한 컴포넌트
   - BorderLayout, GridLayout, FlowLayout
-  - GUI 구성과 관련된 클래스 : Button, Label, Canvas, Checkbox, Choice, Scrollbar,
-                                        List, Menu, TextComponent, TextArea, TextField, CheckboxGroup
+  - GUI 구성과 관련된 클래스 : JButton, JLabel, JCanvas, JCheckbox, JChoice, JScrollbar,
+                                        JList, JMenu, JTextComponent, JTextArea, JTextField, JCheckboxGroup
   - 그래픽 출력과 관련된 클래스 : Color, Font, Rectable, Point, Graphics, Image
-  - 컨테이너 클래스 그외의 클래스 : Frame, Panel, Window, Container, FileDialog, Demension, Event
+  - 컨테이너 클래스 그외의 클래스 : JFrame, JPanel, JWindow, JContainer, JFileDialog, JDemension, JEvent
   - 명령버튼
      - pack() : 컴포넌트의 사이즈를 컴파일러가 최소한의 사이즈로 정함. 
      - setSize(가로크기, 세로크기) : 컴포넌트 사이즈를 개발자가 정함
      - setVisible(true) : 화면에 출력함.
      - dispose() : 자원을 해제시킴
-※AWT 사용법
+※SWING 사용법
   - 컴포넌트 생성(1. 객체선언- 컴포넌트 부착 2. 객체생성) → 이벤트 처리
