@@ -1,0 +1,56 @@
+day17
+- SELECT * FROM TAB;
+   --scott이 소유하고 있는 table을 전부 보여줌
+
+- SELECT * FROM dept;
+   -- dept테이블 데이터 전체 보기
+
+- DESC dept;
+   -- dept테이블의 구조보기
+   ­ not null : null값이 있으면 안 된다.
+   ­ number(4) : 부서코드는 정수 4자리
+   ­ number(7,2) ; 총자리수 7자리 중 소수점 이하는 2자리
+
+- 기본 형식
+SELECT [DISTINCT] {*, column [Alias], ….}
+FROM 데이블명
+[WHERE condition]
+[ORDER BY {column, expression} [ASC|DESC]] ;
+
+- SQL연산자
+  - 비교연산자
+    - 같다(=), 크거나같다(>=), 작거나같다(<=), 다르다(<> ^= !=)
+
+  - 논리 연산자
+    AND, OR, NOT
+
+  - 연결연산자(||) 
+     열이나 문자를 다른 열에 연결하는 연산
+
+  - 중복제거(DISTINCT)
+
+  - BETWEEN a AND b : a부터 b (a,b값 포함. a가 작은 값) 
+  - IN(list)            : list의 값 중 어느 하나와 일치한다
+  - LIKE pattern       : 검색하고자 하는 값을 정확히 모를 경우 pattern과 일치하는지를 검색하며 pattern에는 다음의 두가지 와일드카드가 사용된다.
+  ­ % : 문자가 없거나, 하나 이상의 문자가 어떤 값이 와도 상관없다.
+  ­ _ : 하나의 문자가 어떤 값이 와도 상관없다
+  - IS NULL                : null값을 가졌다
+  - NOT BETWEEN a AND b : a와 b 사이에 있지 않다(a,b값 포함되지 않음)
+  - NOT IN (list)            : list의 값과 일치하지 않는다.
+  - NOT LIKE pattern       : 문자형태가 pattern과 일치하지 않는다.
+  - NOT IS NULL           : null값을 갖지 않다
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
