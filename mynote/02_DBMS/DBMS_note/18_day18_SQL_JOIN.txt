@@ -1,0 +1,24 @@
+day18
+join
+- SQL에서는 두 개 이상의 테이블을 결합햐야만 원하는 결과를 얻을 수 있을 때 한번의 질의로 원하는 결과를 얻어내는 Join 기능
+- 종류
+  - cross join
+    - ex) SELECT * FROM EMP, DEPT
+    - if emp(14), dept(4) -> 출력(16)
+  - equi join
+    - 조인 대상이 되는 두 테이블에서 공통적으로 존재하는 컬럼의 값이 일치되는 행을 연결하여 결과를 생성하는 조인 방법 
+    - ex) SELECT * FROM emp, dept WHERE emp.deptno=dept.deptno;
+  - non-Equi join
+    - 조인 조건에 특정 범위 내에 있는지를 조사하기 위한 방법
+    - ex) SELECT ename, sal, grage FROM emp, salgrage WHERE sal BETWEEN lowsal AND hisal;
+  - self join
+    - 하나의 테이블 내에서 조인을 해야만 원하는 자료를 얻는 경우 사용하는 방법
+    - ex)   SELECT W.ENAME, W.MGR, M.EMPNO, M.ENAME FROM EMP W, EMP M 
+    		WHERE W.ENAME='SMITH' AND W.MGR=M.EMPNO;
+	 - WORKER.MGR 과  MANAGER.EMPNO의 구성성분은 같다.
+
+  - outer join
+    - 조인 조건에 만족하지 못하였더라도 해당 로우를 나타내고 싶을 때에 사용하는 방법
+    - ex) SELECT WORKER.ENAME, MANAGER.ENAME 상사
+		FROM EMP WORKER, EMP MANAGER
+		WHERE WORKER.MGR=MANAGER.EMPNO(+) ;
