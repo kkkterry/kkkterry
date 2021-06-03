@@ -1,0 +1,25 @@
+day 19.
+단일행 함수
+- INPUT1 -> OUTPUT1
+- 종류
+  - 숫자함수, 문자처리함수, 날짜함수, 형변환함수, NULL, ETC
+  - 숫자함수
+    - 수학함수 : (sin, cos, tan…), 올림(ceil), 반올림(round), 내림(trunc), 나머지(mod) 등
+    - 문자처리함수 : LOWER(str), UPPER(str), INITCAP(str), CONCAT(str1, str2)
+	  	  SUBSTR(str, 시작할위치, 추출할갯수), SUBSTRB(str, 시작할위치,추출할갯수)
+		  LENGTH(str), LENGTHB(str), INSTR(str, 찾을글자, 시작위치, 몇번째발견 검색된 횟수)
+		  LPAD, RPAD, TRIM, CHR, ASCII, REPLACE
+    - 날짜함수 : SYSDATE 시스템 저장된 현재 날짜를 반환한다.
+	        MONTHS_BETWEEN 두 날짜 사이가 몇 개월인지를 반환한다
+	        ADD_MONTHS 특정 날짜에 개월 수를 더한다
+	        NEXT_DAY 특정 날짜에서 최초로 도래하는 인자로 받은 요일의 날짜를 반환한다
+	        LAST_DAY 해당 달의 마지막 날짜를 반환한다
+	        ROUND 인자로 받은 날짜를 특정 기준으로 반올림한다
+	        TRUNC 인자로 받은 날짜를 특정 기준으로 버린다
+     - 형변환함수 : TO_CHAR : 날짜형 혹은 숫자형을 문자형으로 변환
+	           TO_DATE(‘문자’, ‘FORMAT’);
+	           TO_NUMBER : 문자형을 숫자형으로 변환
+     - 그외 : EXTRACT ; 입력값인 날짜 데이터 타입에서 지정된 값을 추출하는 함수.
+	   LEVEL : 계층적 질의문에서 검색된 결과에 대한 계층별로 레벨 표시
+               START WITH : 계층적인 출력 형식을 표현하기 위한 최상위 행
+	   CONNECT BY PRIOR : 계층 관계의 데이터를 지정하는 컬럼
