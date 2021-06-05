@@ -1,0 +1,15 @@
+day20
+SUB QUERY
+- 단일행 서브쿼리
+  : 서브쿼리의 결과가 단일 행
+  : SELECT ename, sal 
+	FROM emp 
+	WHERE sal=(SELECT MAX(sal) FROM emp);
+- 다중행 서브쿼리
+  : 서브쿼리의 결과가 2행 이상의 행
+  : SELECT ENAME, HIREDATE 
+	FROM EMP 
+	WHERE (DEPTNO, HIREDATE) 
+		IN (SELECT DEPTNO, MAX(HIREDATE) FROM EMP GROUP BY DEPTNO);
+    - 복수 행 연산자: IN, NOT IN, ANY, SOME, ALL, EXISTS
+

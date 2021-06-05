@@ -1,0 +1,14 @@
+day 20
+-그룹함수(INPUT n -> OUTPUT1)
+- 형식
+  SELECT column, group_function
+  FROM table
+  WHERE condition
+  GROUP BY group_by_expression
+  HAVING   group_condition
+  ORDER BY column;
+- ROLLUP 
+  - ROLLUP 연산자와 함께 GROUP BY 절 사용
+
+
+
