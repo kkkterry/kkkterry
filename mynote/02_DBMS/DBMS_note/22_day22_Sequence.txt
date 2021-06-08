@@ -1,0 +1,18 @@
+day22.
+Sequence
+- 순차적인 번호를 자동으로 생성하는 객체로 테이블과 독립적으로 생성 및 저장 가능
+
+- 문법
+  CREATE SEQUENCE sequence_name 
+  [INCREMENT BY n]  [START WITH n] 
+  [MAXVALUE n] [MINVALUE n]
+  [CYCLE | NOCYCLE]
+  [CACHE n | NOCACHE];
+
+- 삭제
+  DROP SEQUENCE sequence_name;
+
+- 수정
+  ALTER SEQUENCE sequence_name 
+  [INCREAMENT BY n] [START WITH n] [MAXVALUE n][MINVALUE n];
+
