@@ -1,0 +1,58 @@
+day23.
+VIEW, INLINE VIEW, TOP-N구문, 
+- VIEW
+  - 단순뷰: 하나의 테이블로 구성한 뷰
+    - CREATE OR REPALCE VIEW 뷰명
+	 AS SELECT 필드명 FROM 테이블명;
+  - 복합뷰: 하나 이상의 테이블로 구성한 뷰
+    - DML문을 제한적으로 사용
+    - CREATE OR REPLACE VIEW EMPv0
+	AS SELECT EMPNO, ENAME, JOB, DNAME FROM EMP E, DEPT D
+		WHERE E.DEPTNO=D.DEPTNO;
+  - 제한조건
+    - WITH READ ONLY옵션을 설정한 뷰는 갱신 불가
+    - WITH CHECK OPTION을 설정한 뷰는 조건에 해당되는 데이터만 삽입, 삭제 수정
+    - 함수사용시 별명을 지어야 한다.
+
+- INLINE VIEW
+  - FROM절 상의 서브쿼리를 인라인 뷰라고 부른다.
+  - SELECT COLUMN_LIST
+	FROM (SUB_QUERY) ALIAS
+		WHERE CONDITION;
+
+- TOP-N구문
+  - TOP-N질의는 컬럼의 값 중 N개의 가장 큰 값 또는 작은 값을 기준으로 질의하는 것
+  - SELECT [column_list] ROWNUM  -- ROWNUM은 테이블에서 읽어오는 순서
+	FROM (SELECT [column_list] FROM table ORDER BY TOP-N_column)
+		WHERE ROWNUM <= N;
+  - 필수요소 : Rownum (row 순서를 나타내는 가상컬럼)
+                  FROM 절상의 SUB QUERY(Inline view)
+               Sub Query내의 Order By 절
+	     사용가능한 비교연산자
+
+- INDEX
+  - 빠른 검색을 위해서 인덱스를 사용합니다
+  - CREATE INDEX INDEX_NAME
+	ON TABLE_NAME (COLUMN_NAME);
+- 트랜잭션
+  - 트랜잭션(Transaction)은 데이터 처리의 한단위입니다.
+  - COMMIT, SAVEPOINT, ROLLBACK
+  - SAVEPOINT LABEL_NAME;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
