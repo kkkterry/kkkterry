@@ -1,0 +1,51 @@
+day24
+MySQL
+     - oracle sql과의 차이점
+	select concat(pname, '(',job, ')') from personal; -- 오라클은 2개까지만. ||은 OR의 의미 연결연산자가 아니다.
+	select round(114.7, -1); -- cf) 오라클에서는 select round(114.7, -1) from dual;
+	select reverse('대박사건');
+	select reverse('HELLO');
+	select year(startdate) from personal;
+	select month(startdate) from personal;
+	select monthname(startdate) from personal;
+	select dayname(startdate) from personal; -- 요일이름 Wednesday..
+	select WEEKDAY(‘20160318’); --날짜의 주별 일자 출력(월요일은0, 화요일은1, 일요일은6)
+	select DAYOFYEAR(‘20160318’); --일년을 기준으로 한 날짜짜지의 수
+	select now();
+	select sysdate(); -- 현재 날짜 시간
+	select current_date() – 현재 날짜만
+	select curdate();
+	select current_time(); -- 현재 시간만
+	select curtime();
+	select date_format(now(), '%y년%m월%e일 %a %p %h시 %i분');
+	select date_format(now(), '%Y년%m월%e일 %a %H시 %i분');
+	select date_format(startdata, '%y년%m월%e일') from personal;
+	%Y 4자리 연도	%y 2자리 연도
+	%M 긴월 이름(January, )	%m 숫자의 월(01,02,03..12)
+	%b 짧은 월 이름(Jan, )	%c 숫자의 월(1,2,3…12)
+	%e 월 내의 일(1,2,3..31)	%d 월 내의 일자(01,02,…31)
+	select pname, pay, if(pay>3000, 'Good', 'Bad') from personal; -- 논리함수 존재
+	select pname, pay, bonus, pay+ifnull(bonus, 0) from personal; --오라클의 NVL()역할
+	select rpad(substr(pname, 1, 1), length(pname), '*') from personal; -- 오라클과 동일
+	Top-n 역할
+	select pname, pay from personal order by pay desc;
+	select pname, pay from personal order by pay desc limit 3;
+	select pname, pay from personal order by pay desc limit 2,3; -- 순서가 0부터시작  2번째부터 3건
+	SELECT * FROM personal ORDER BY pno desc LIMIT 4, 3;
+	Join
+	select * from personal where dno=40;
+	select * from division;
+	select pname, dname from personal p, division d 
+		where p.dno=d.dno;
+	select pname, dname from personal p right outer join division d 
+		on p.dno=d.dno;
+	select w.pname, w.manager, m.pno, m.pname from personal w left outer join personal m on w.manager = m.pno;
+	select pname, format(pay, 0) from personal;
+	select pname, format(pay, 1) from personal;
+	show tables;
+	show databases;
+	create database test;
+	use mysql;
+	show databases;
+	use test;
+

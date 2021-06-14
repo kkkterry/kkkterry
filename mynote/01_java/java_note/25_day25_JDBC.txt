@@ -1,0 +1,30 @@
+day25
+JDBC
+- 단계
+* 변수 및 드라이버 url설정*
+String driver = "oracle.jdbc.driver.OracleDriver";
+String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+Connection conn = null; // DB 연결 객체 변수
+Statement  stmt = null; // SQL문 전송 객체 변수
+ResultSet  rs   = null; // SELECT 문 결과 받는 객체 변수
+
+(1) 드라이버로드
+Class.forName(driver); 
+
+(2) DB연결 객체 생성
+conn = DriverManager.getConnection(url, "scott","tiger");
+
+(3) SQL문 전송 객체 생성
+stmt = conn.createStatement(); 
+
+(4) SQL전송 (5)결과받기
+rs   = stmt.executeQuery(sql);
+ 
+(6)결과를 받아 원하는 로직 수행
+if(rs.next()) {
+}
+
+7) 연결 해제
+if(rs!=null) rs.close();
+if(stmt!=null) stmt.close();
+if(conn!=null) conn.close();
