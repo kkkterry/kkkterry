@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="ex.css" rel="stylesheet" type="text/css" />
+    <script>
+        function chk() {
+            if (frm.pw.value != frm.pwchk.value) {
+                alert("패스워드를 확인하세요");
+                frm.pw.value = "";
+                frm.pwchk.value = "";
+                frm.pwchk.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div="header">
+        <center><h1>회원가입</h1></center>
+    </div>
+    <div="section">
+        <form name="frm" onsubmit="return chk()">
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <td>
+                        <input type="text" name="name" id="name" required="required" pattern="[a-zA-Z가-힣]{2}[a-zA-Z가-힣]*" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>아이디</th>
+                    <td>
+                        <input type="text" name="id" id="id" required="required" pattern="[a-zA-Z가-힣]{4}[a-zA-Z가-힣]*" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>비밀번호</th>
+                    <td>
+                        <input type="password" name="pw" id="pw" required="required" pattern=".+" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>비밀번호확인</th>
+                    <td>
+                        <input type="password" name="pwchk" id="pwchk" required="required" pattern=".+" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>이메일</th>
+                    <td>
+                        <input type="email" name="email" id="email" required="required" pattern="[a-zA-Z가-힣]+@[a-zA-a]+(\.[a-zA-Z]+){1,2}" t itle="이메일 형식을 지켜주세요" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>전화</th>
+                    <td>
+                        <input type="tel" name="tel" id="tel" required="required" pattern="[0][1-2][0-1]*-{1}[0-9]{3,4}-{1}[0-9]{4}" title="전화번호 형식을 지켜주세요" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>출신지역</th>
+                    <td>
+                        <select name="place">
+                            <option></option>
+                            <option>서울특별시</option>
+                            <option>경기도</option>
+                            <option>강원도</option>
+                            <option>경상도</option>
+                            <option>전라도</option>
+                            <option>부산광역시</option>
+                            <option>전라도</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>결혼유뮤</th>
+                    <td>
+                        <input type="radio" name="m" value="기혼" />기혼
+                        <input type="radio" name="m" value="미혼" />미혼
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <th>자식유뮤</th>
+                    <td>
+                        <input type="radio" name="s" value="자식있음" />자식있음
+                        <input type="radio" name="s" value="자식없음" />자식없음
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <center><input type="submit" value="입력" /></center>
+                    </td>
+                </tr>
+            </table>
+        </form>    
+    </div>
+    <div="footer">
+
+    </div>
+</body>
+</html>
