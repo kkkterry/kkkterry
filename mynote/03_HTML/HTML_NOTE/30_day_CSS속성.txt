@@ -1,0 +1,35 @@
+day30
+CSS 속성들
+1. CSS 단위
+   - 1em=16px - 100% = 16px - px
+2. url(경로)
+   - font와 이미지 저장
+3. display 속성
+   - 화면에 어떻게 보이는 지를 설명하는 속성
+   - block: div태그, p태그, li태그(높이 속성이 존재)
+   - inline: span태그, 높이의 속성이 없다
+   - inline block: 블록의 속성을 갖고 옆으로 붙여 나가는 것, 높이 속성이 있다.
+4. visibility 속성
+   - visibility:hidden : 공간은 확보, 안보임
+   - display:none : 공간도 사라짐
+5. opacity 속성
+   - 투명도 조절하는 속성
+6. margin 및 padding 속성
+   - margin: 밖여백, padding: 안여백
+7. box-sizing 속성
+   - box-sizing속성을 이용해 전체 사이즈의 크기 변경가능
+   - box-sizing: border-box: 보더를 박스안으로
+   - box-sizing: content-box: 보더를 박스밖으로
+8. border 속성
+9. 글자 관련 속성
+   - font-family(글꼴), font-size(크기), font-style(이텔릭체), font-weight(진하게)
+     line-height(행간격 조정용도나 새로축에 대한 정렬용도), text-align(글자에 대한 정렬)
+     text-decoration(간단한 글꼴 모양의 속성)
+10. position
+     - absolute: 가까운 부모 혹은 조상기준 원하는 좌표에 배치
+     - fixed: 창기준 원하는 좌표에 배치
+     - relative: 변경기준에서 언급한 위치로 이동
+11. float속성
+     - float:(right, left)
+    
+
