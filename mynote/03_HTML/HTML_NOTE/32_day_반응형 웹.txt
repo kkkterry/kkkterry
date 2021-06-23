@@ -1,0 +1,10 @@
+day32
+반응형 웹
+- 디스플레이의 종류에 따라 화면의 크기가 자동으로 변하도록 만든 웹
+- width=device-width : 페이지의 너비를 기기의 스크린 너비로한다.)
+- initial-scale=1.0 : 처음 페이지 로딩시 확대/축소가 되지 않은 원래 크기 사용
+- minimum-scale : 줄일 수 있는 최소크기 지정
+- maximum-scale : 늘릴 수 있는 최대 크기 지정
+- user-scalable : 사용자 설정 가능
+- #toggle:checked ~ h1{display:block;}
+  #toggle{display:none;}
