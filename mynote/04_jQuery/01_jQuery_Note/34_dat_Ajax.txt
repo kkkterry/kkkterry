@@ -1,0 +1,10 @@
+day34.
+- Ajax
+  - 서버와 데이터 교환을 하는 기술
+  - 웹페이지의 특정부분을 업데이트하고 서버와 데이터를 교환
+  - $('#div명').load('파일명 div명(클래스명 등)'), function(responseTxt, statusTxt, xhr){
+    // reponseTxt : 요청성공시 가져올 데이터
+    // statusTxt : 요청상태(success, error, timeout, ...)
+    // xhr : 객체
+    //xhr.status : 404 없는 파일
+    //xhr.statusText : 에러 타입

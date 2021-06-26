@@ -1,0 +1,24 @@
+day33
+- jQuery 
+$(document).ready(function(){
+	// 웹문서(document)가 준비(onload)될 때(jQuery의 ready이벤트는 onload이벤트이다)
+	// $ : jQuery를 의미한다 $(“선택자”).css(“속성”,”속성값”);
+	// jQuery 메소드가 여기 온다.
+});
+- 기본 함수
+  - hide() : 숨기기
+  - show() : 나타내기
+  - toggle() : toggle
+  - html() : 해당 선택자 안에 html코드 삽입
+  - text()   해당 선택자 안에 text 삽입
+  - val('변형될 value') ; value값 변형
+  - css('속성', '속성값')
+  - each ; 배열 처리함수 
+  - addClass ; 클래스 추가
+  - removeClass ; 클래스 삭제
+  - append: 앞에 추가
+  - prepend: 뒤에 추가
+  - attr: 
+
+    
+    

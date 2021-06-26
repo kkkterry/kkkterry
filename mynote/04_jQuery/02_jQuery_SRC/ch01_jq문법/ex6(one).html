@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style></style>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('h2').one('click', function(){//객체.one(이벤트명, 처리할 함수);
+				$(this).prepend('★').append('★');
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>방탄 좋아요 클릭은 한번만</h2>
+	<h2>소녀시대 클릭은 한번만</h2>
+</body>
+</html>

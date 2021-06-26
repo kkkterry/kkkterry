@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #header{
+            width:500px;
+            margin:0 auto;
+        }
+
+        #section{
+            width:500px;
+            margin:0 auto;
+        }
+
+        td{
+          width:100px;
+          height:100px;
+          background-color:green;
+        }
+
+        #hint{
+            width:500px;
+            margin:0 auto;
+        }
+
+        #answer{
+            width:500px;
+            margin:0 auto;
+        }
+
+        input{
+            width:250px;
+        }
+
+        .tored{
+            background-color:red;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var place = parseInt(Math.random() * 9);
+            $('td').click(function () {
+                $('td').removeClass('tored');
+                var idx = $(this).attr("id");
+                if (idx == place) {
+                    $(this).css('background-color', 'blue');
+                    $('td').off();
+                    $('input').val('정답');
+                    $('#hint').html('');
+                } else {
+                    $(this).addClass('toClick');
+                    $('input').val('틀렸습니다.');
+                    $('#hint').html('hint' + place);
+                }            
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="header"><h2>연습문제1. 떡이 있는 곳을 맞춰봐</h2></div>
+    <div id="section">
+        <table>
+            <tr>
+                <td id="0"></td>
+                <td id="1"></td>
+                <td id="2"></td>
+            </tr>
+            <tr>
+                <td id="3"></td>
+                <td id="4"></td>
+                <td id="5"></td>
+            </tr>
+            <tr>
+                <td id="6"></td>
+                <td id="7"></td>
+                <td id="8"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="hint">힌트</div>
+    <div id="answer"><input type="text" value="선택한 곳이 맞는지 답을 뿌리는 곳"/></div>
+
+</body>
+</html>

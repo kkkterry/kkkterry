@@ -1,0 +1,24 @@
+day34.
+R Language 기초
+- ? 이름                : 도움말 출력
+- help("이름")         : 도움말 출력
+- ?? 이름               : 도움말 검색
+- help.search("이름") : 도움말 검색
+- library(help="패키지명") : 패키지 도움말
+- methods(이름) : 함수 목록 출력
+- as.integer(1.25) : 정수화
+- x<- -1:1 : -1, 0, 1
+- x<- c(1,2,3) : 1, 2, 3
+- x<- c(-1:1, 10) : -1, 0, 1, 10
+- example("as.integer") #예제 출력
+- attribute(개체) : 개체 속성조회
+- dim(available.packages()) # CRAN site에 업로드된 패키지 갯수
+- available.packages()
+# 1. 라이브러리 설치 : install.packages("패키지명")
+# 2. 라이브러리를 메모리에 로딩 : library("패키지명") require("패키지명")
+# 3. 설치된 라이브러리 확인 : installed.packages()
+# 4. 메모리에 로딩된 패키지 : search()
+# 5. 메모리에 로딩된 패키지 메모리에서 내리기
+detach("package:MASS", unload=TRUE);
+- 메모리에 로드 없이 데이터 사용: data(iris, package="datasets")
+- 변수 삭제 : rm(data)
