@@ -1,0 +1,36 @@
+day36
+1. 행렬
+   - rowMatrix <- matrix(1:15, nrow=5, ncol=3, byrow = TRUE,
+                    dimnames = list(c("R1", "R2", "R3", "R4", "R5"), 
+                                    c("C1","C2","C3"))
+                    )
+   - solve(X) # 역행렬
+   - t(rowMatrix) #전치행렬
+   - 행렬연산 ( *,+,-,/,%%,   %*%)
+
+2. 배열
+   - dataArray <- array(1:24, dim=c(3,4,2)) # 3차원 numeric 배열 (3행4열2면)
+
+3. 데이터 프레임
+   - student_data <- data.frame(student_id, student_name, student_kor,
+                           student_eng, student_gender)
+
+   - 데이터프레임의 열 형 변환
+     student_data$student_id <- as.numeric(student_data$student_id) # 수치형 변환
+
+4. 문자열과 날짜
+    - length(name) # 요소의 갯수 : 1
+      nchar(name)  # 문자 길이 : 4
+    - 하위 문자열 추출하기 : substr
+    - 문자열 연결하기 : paste() paste0()
+    - 문자 분할 (구분자로 분할하기)
+      strsplit(path, '/')
+    - 문자열 대체 sub(oldStr, newStr, string) 처음 나오는 oldStr을 newStr로 바꿈
+       gsub(oldStr, newStr, string) 다 바꿈
+    - today <- Sys.Date()
+    -
+
+
+
+
+
