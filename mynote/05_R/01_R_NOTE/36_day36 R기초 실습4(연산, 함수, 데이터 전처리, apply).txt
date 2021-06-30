@@ -1,0 +1,58 @@
+day37
+- ifelse => ()? aa:aa
+- readline(prompt='파일명') -> 결과는 문자
+- for(i in x){
+}
+- while(조건){
+조건이 참일때 동안 반복
+}
+- repeat(조건){
+if() break;
+}
+- 연산자
+^:승수
+%/%: 몫
+%%:나머지
+x&y:요소끼리 and
+x|y:요소끼리 or
+x&&y:1개 and
+x||y:1개 or
+%*%:행렬곱
+%o%:외적
+%in%:데이터 포함 여부
+
+- 함수에서 명시적 return이 없는 경우 마지막 실행값이 return 된다.
+- 가변인자 함수
+  <- function(...){
+
+}
+
+--------------------------------------------------------------------------
+데이터 전처리
+- read & write
+1. writetable: 데이터를 파일에 저장
+   writetable('  /이름',sep=,rownames=F)
+2. readtable: 파일의 내용을 데이터 프레임 형태로 읽어옴
+   readtable('  /이름',sep=,header=,encoding=,stringasfactor=)
+3. write.csv
+   write.csv('  /이름',quote=,rowname=)
+4. read.csv
+   read.csv('  /이름',head=)
+5. cat을 이용한 text출력
+   cat('  ','  ', file='     ')
+
+- apply
+  :apply계열 함수를 이용하면 반복문 사용보다 코드최소화, 수행 속도 빠름
+ - apply : 행렬이나 배열 차원별로 지정한 함수 적용(벡터로 반환)
+ - lapply : list apply (함수를 적용한 결과를 list로 반환)
+ - sapply : lapply와 유사하나 결과를 리스트 대신 행렬, 벡터로 반환
+ - vapply : sapply와 유사하나 FUN의 모든 값이 FUN.VALUE와 호환되는지 확인
+
+
+
+
+
+
+
+
+
