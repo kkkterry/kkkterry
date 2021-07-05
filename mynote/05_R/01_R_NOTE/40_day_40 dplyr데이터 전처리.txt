@@ -1,0 +1,18 @@
+day40
+데이터 전처리
+1.dplyr 패키지
+filter()	행 추출
+select()	열(변수) 추출
+arrange()	정렬
+mutate()	변수 추가(새필드)
+summarise()	통계치 산출
+group_by()	집단별로 나누기
+left_join()	데이터 합치기(열)
+bind_rows()	데이터 합치기(행)
+
+2. 데이터 합치기
+- 열합치기 : cbind, left_join(dplyr 패키지 함수)
+- 행합치기 : rbind, bind_rows(dplyr 패키지 함수)
+
+3. 데이터 정제하기
+na.omit(df) # 결측치가 하나의 열이라도 있으면 그행은 모두 제거
