@@ -92,8 +92,8 @@ par(oldPar)
 plot(cars, main="speed and Stopping Dsitance of cars",
      xlab="speed(mph)", ylab="stopping distance(ft)",
      las=1)
-
 #las;축눈금라벨방향 0축과평행, 1가로 2축과수직 3세로
+?plot
 
 ## 2.2 barplot : 막대그래프
 datasets::VADeaths
@@ -137,7 +137,6 @@ InsectSprays
 rm(InsectSprays)
 head(InsectSprays)
 boxplot(InsectSprays$count)
-
 # boxplot(InsectSprays$count~InsectSprays$spray)
 boxplot(count ~ spray, data=InsectSprays, col=pal)
 tapply(InsectSprays$count, InsectSprays$spray, median)
@@ -157,6 +156,7 @@ h <- hist(x, breaks=c(0.5,1.5,2.5,3.5,4.5),
           ylim=c(0,3.5))
 h
 text(h$mids, h$counts, paste(h$counts, '개', sep=''), col="blue", adj=c(0.5, -0.5)) # adj 위치 재조정
+
 text(h$mids, h$counts, paste(h$counts, '개', sep=''), adj=c(0,0), col="red") # 텍스트의 왼쪽아래가 기준점
 text(h$mids, h$counts, paste(h$counts, '개', sep=''), adj=c(0,1), col="black") # 텍스트의 왼쪽위가 기준점
 text(h$mids, h$counts, paste(h$counts, '개', sep=''), adj=c(1,0), col="green") # 텍스트의 오른쪽 아래가 기준점
@@ -344,7 +344,6 @@ ggplot(data=mpg, aes(x=displ, fill=class)) +
                                         linetype = "dotted", color="black"),
         plot.background = element_rect(fill="lightyellow"))
 ?geom_histogram
-
 # bins : 빈의 갯수를 지정하지 않으면 30
 #      binwidth를 지정하면 binwidth에 따라 빈의 갯수 설정
 # fill : 히스토그램의 색상
@@ -442,6 +441,83 @@ ggplot(economics, aes(x=date, y=unemploy)) +
 # 히스토그램 : 연속된 자료를 계급으로 나우어 계급별 도수 geom_histogram()
 # 막대그래프 : 범주형 데이터의 빈도를 나타냄 geom_bar()
 #(cf) x, y축이 다 존재할 경우 geom_bar(), geom_col()
+library(ggplot2)
+table(mpg$manufacturer)
+ggplot(mpg, aes(x=manufacturer)) + geom_histogram() # 범주형데이터에서 불가
+
+ggplot(mpg, aes(x=displ)) + geom_histogram()
+ggplot(mpg, aes(x=manufacturer)) +
+  geom_bar(stat = "count") +
+  theme(axis.text.x = element_text(angle=60, vjust = 0.7))
+?geom_bar
+
+# 제조회사별 빈도그래프(class별 다른 색상으로)
+library(RColorBrewer)
+display.brewer.all()
+ggplot(mpg, aes(x=manufacturer, fill=class, col=class)) +
+  geom_bar(stat="count") +
+  labs(title="제조회사별 빈도",
+       subtitle="(class별 분리)",
+       x ="제조회사", y="빈도수", 
+       caption="source:ggplot2::mpg") +
+  theme(axis.text.x = element_text(angle=60, vjust = 0.7),
+        legend.position = "bottom") +
+  scale_fill_manual(values=brewer.pal(7, "Set3")) +
+  scale_color_manual(values=rainbow(7)) +
+  coord_cartesian(ylim=c(0,50))
+length(unique(mpg$class)) # fill과 col의 지정 7개 필요
+
+# ggplot2::diamonds 데이터셋에서 절단품질(cut)별 빈도수
+table(diamonds$cut)
+dim(diamonds)
+ggplot(diamonds, aes(x=cut))+
+  geom_bar(stat="count", aes(fill=cut))
+
+# 품질(cut)별 색상(color)의 빈도수
+table(diamonds$cut, diamonds$color)
+
+library(dplyr)
+diamonds %>% 
+  group_by(cut, color) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(x=cut, y=n, fill=color)) + 
+  #geom_bar(stat="identity")
+  geom_col()
+
+diamonds %>% 
+  group_by(cut, color) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(x=cut, y=n, fill=color)) + 
+  #geom_bar(stat="identity", position = "dodge")
+  geom_col(position = "dodge")
+# position = "dodge" : beside=T 역할. 막대를 개별
+
+# cut별 table(다이아몬드 상단 넓이) 갯수를 시각화(title을 가운데 정렬)
+table(diamonds$cut, diamonds$table)
+
+diamonds %>% 
+  group_by(cut, table) %>% 
+  summarise(n = n()) %>% 
+  group_by(cut) %>% 
+  summarise(cnt = n()) %>% 
+  ggplot(aes(x=cut, y=cnt, fill=cut)) +
+  #geom_bar(stat="identity") +
+  geom_col() +
+  labs(title = "다이아몬드 품질별 다이아몬드 상단 넓이 종류",
+       subtitle="cut별 table 수") +
+  theme(legend.position = "bottom",
+        plot.title = element_text(hjust=.5),
+        plot.subtitle = element_text(hjust=.5))
+
+# cut별 table 별 빈도수 시각화 (cut별로 따로)
+table(diamonds$cut, diamonds$table)
+diamonds %>% 
+  group_by(cut, table) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(x=table, y=n)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~cut) + #cut별 시각화를 따로
+  coord_cartesian(ylim=c(0,4000), xlim=c(50,80))
 
 ## 4.8 그래프를 파일에 저장
 #(1) basic graph, ggplot패키지 모두 저장
@@ -476,233 +552,3 @@ dev.off()
 #### 5. 산점도 행렬 ####
 plot(iris[-5])
 pairs(iris[-5], panel = panel.smooth)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
