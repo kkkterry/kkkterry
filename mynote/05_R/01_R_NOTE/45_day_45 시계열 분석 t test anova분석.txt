@@ -1,0 +1,57 @@
+day 45
+반응형 그래프 (interactive graph)란?
+- 마우스 움직임에 따라 반응하며 실시간 형태가 변하거나 세부 정보를 보여주는 그래프
+- 시계열 데이터로 인터랙티브 시계열 그래프 만들기
+install.packages("dygraphs")
+library(dygraphs)	#dygraphs 패키지를 이용해 인터랙티브 시계열 그래프를 만들기 위해선 데이터가 시간순서대로 되어있어야 합니다. 
+                         #시간순서 속성을 지니는 xts타입으로 변경
+library(xts)	#xts 팩키지는 시계열 데이터를 기본 행렬자료구조에 시계열 정보를 인덱스로 붙여 표현한다
+head(economics)
+str(economics)
+eco <- xts(economics$unemploy, order.by = economics$date)
+head(eco)
+dygraph(eco)
+dygraph(eco) %>%  dyRangeSelector()
+head(economics[,c('psavert','unemploy')])
+
+t-test분석 vs. ANOVA 분석
+# 일원표본 t-test
+a <- ToothGrowth[ToothGrowth$supp=='OJ','len']
+b <- ToothGrowth[ToothGrowth$supp=='VC','len']
+# p-value가 0.05보다 작은 경우 귀무가설(두 그룹의 평균이 같다)을 기각함
+# p-value가 0.05보다 큰 경우 귀무가설을 기각하지 못한다.
+
+# 이원표본 t-test, ftest (등분산성 테스트 -> t-test)
+var.test(len~supp, data=ToothGrowth) # 등분산성 test
+# p-value가 0.05보다 작은 경우 귀무가설(두 그룹의 분산이 같다)을 기각함 - 등분산성이 성립 되지 않음.
+# p-value가 0.05보다 큰 경우 귀무가설을 기각하지 못한다. - 등분산성 성립
+t.test(len~supp, data=ToothGrowth, var.equal=FALSE) # var.equal 등분산성 여부 값
+# p-value가 0.05보다 작은 경우 귀무가설(두 그룹의 평균이 같다)을 기각함
+# p-value가 0.05보다 큰 경우 귀무가설 기각하지 못한다.
+
+
+# 세그룹 이상의 집단 간의 평균 차이가 유의한지 검증 : ANOVA분석(분산분석)
+# (1) aov()(기준이 factor이어야 한다)
+aov(Sepal.Length ~ Species, data=iris)
+
+# (2) anova()
+fit <- lm(mpg~cyl, data=mtcars)
+anova(fit) # F가 0.05보다 작으면 귀무가설을 기각
+
+패키지 설치 및 로드하기
+install.packages("foreign")
+library(foreign) # SPSS 파일 불러오기
+(1) SPSS파일을 데이터 프레임으로
+raw_Welfare <- read.spss(file = '경로+파일이름',to.data.frame = TRUE,reencode = "utf-8") 
+# to.data.frame = TRUE가 없으면 list형태로 받아옴
+# reencode = "utf-8" 한글깨지는거 방지
+
+*table(welfare$gender, useNA = "ifany") # 이상치 없음
+
+
+
+
+
+
+
+
