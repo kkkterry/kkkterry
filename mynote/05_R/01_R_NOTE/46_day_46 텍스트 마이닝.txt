@@ -1,0 +1,24 @@
+day 46
+덱스트 마이닝
+# 문자로 된 비정형 텍스트 데이터로부터 가치있는 정보를 얻어내는 분석 : 텍스트 마이닝에서 가장 먼저 할 일은 형태소 분석
+install.packages("rJava")
+install.packages("memoise")
+install.packages("KoNLP") # not available for this version of R
+
+# google "KoNLP"를 검색후 "CRAN - Package KoNLP" 클릭 -> "archive." 클릭 후 "	KoNLP_0.80.2.tar.gz" 다운로드
+
+# 우측 package 탭에서 수동으로 install 하기 위해 
+install.packages("devtools")
+
+# KoNLP가 의존하는 package 미리 install
+install.packages("hash")
+install.packages("tau")
+install.packages("Sejong")
+install.packages("RSQLite")
+
+# 우측의 package탭의 install 도구를 이용하여 KoNLP install
+
+# "scala-library-2.11.8.jar"파일을 "C:/Program Files/R/R-4.1.0/library/KoNLP/java" 폴더(폴더명은 개인별로 다름)에 복사
+library(KoNLP)
+useNIADic() # 사전 설정하기 에러 나면 https://github.com/youngwoos/Doit_R/blob/master/FAQ/install_KoNLP.md 참조
+extractNoun("대한 민국의 영토는 한반도와 그 부속 도서로 한다")
