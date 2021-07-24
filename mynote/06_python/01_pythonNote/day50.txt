@@ -1,0 +1,51 @@
+day50
+- 모듈과 페키지
+  - sys.path추가  
+    - import sys
+    - sys.path.append('c:/bigdata/src/pylib')
+  - 모듈: 파이썬 표준 모듈은 함수, 변수, 클래스 등을 담고 있는 파일
+  - import A - A 모듈을 가져옴
+    import A as B - A모듈을 B이름으로 가져옴
+    from A import B - A모듈안에 B함수(A패키지안의 B모듈)을 가져옴
+    from A import B as C -A모듈안에 B함수(A패키지 안의 B모듈)을 C이름으로 가져옴
+    from A.B import C - A패키지 안에 B모듈의 C함수를 가져옴
+    from A.B import C as D - A패키지 안에 B모듈의 C함수를 D이름으로 가져옴
+    sample_pac.ab.a.hello()
+- 객체 지향 프로그래밍
+  - 객체와 클래스
+     class 클래스명:
+             변수나 함수들을 선언
+  - 변수와 메소드
+     - 인스턴스 메소드 & 클래스 메소드 & static 메소드
+        - 인스턴스 메소드 : 첫번째 인자에 self를 꼭 삽입. 객체를 통해서만 호출할 메소드
+        - 클래스메소드 : @classmethod를 통해 선언한 메소드. 첫번째 인자에 cls(clazz)를 꼭 삽입
+        - static 메소드 : @staticmethod를 통해 선언한 메소드. 인자를 넣지 않는다.
+  - 생성자 함수(init)과 소멸자(del)
+     - 생성자 : init(self, 매개변수,...) 객체가 생성될때 자동 실행된다.
+                  생성시 필요한 코드(객체변수 초기화)를 포함
+     - 소멸자 : del(self) 객체가 소멸될때 자동 실행
+                  소멸시 필요한 코드를 포함 인스턴스 객체의 레퍼런스 카운트가 0 이 될때 실행
+     - __str__
+     - 참고
+       ★ 생성자를 통한 멤버 변수의 초기화 ★
+       ★ 파이썬은 함수를 중복 정의(오버로딩) 불가 ★
+       ★ 생성자 함수도 중복정의(오버로딩) 불가 ★
+- 상속과 재정의
+  -  super() (참고 내용 모두 사용)
+         'name과 gender에 major변수를 갖는 student타입'
+    def __init__(self, name, gender, major):
+        # 부모클래스의 생성자를 호출하여 초기화
+        super().__init__(name, gender)
+        # Person.__init__(self,name, gender)
+        self.major = major
+    def __del__(self):
+        pass
+    def print_info(self):
+        super().print_info()
+        print("전공은 {}입니다.".format(self.major))
+        
+    def __str__(self):
+        return Person.__str__(self) + \
+                "그리고 전공은 {}입니다.".format(self.major)
+
+
