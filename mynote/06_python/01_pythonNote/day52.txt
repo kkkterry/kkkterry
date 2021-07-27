@@ -1,0 +1,16 @@
+day52.
+- 파일 io프로그래밍
+  - json 데이터 저장하고 불러오기
+    - 변수 -> 파일(dump)
+      with open('data/ch09_member1.json','w') as jsonfile:
+      	json.dump(data,jsonfile,ensure_ascii=False, ,)
+      # ensure_ascii=False 부분이 없으면 한글이 유니코드로 저장
+      # indent들여쓰기 
+      # default=Member.as_dict (일반함수 적용)
+    - JSON load(파일->변수)
+      with open('data/ch09_member2.json','r',encoding='utf-8') as jsonfile:
+	json.load(jsonfile,object_hook=as_member(일반함수))
+    - json파일을 DataFrame
+      import pandas as pd
+	member = pd.read_json('data/ch09_member2.json')
+		
