@@ -1,0 +1,53 @@
+day54
+- N차원 배열 다루기
+  - 넘파이 페키지
+    - np.arange(15) -> 1 - 15
+    - np.arange(15).reshape(3,5)
+    - type(a) -> a의 타입
+    - a.dtype -> a변수의 타입
+    - a.shape = (5,3)
+    - a.size -> a변수의 길이(원소의 수)
+    - 배열인덱싱
+      - 리스트 인덱싱과 비슷 단 a[1,2]
+    - 복사
+      - d = np.array(c, copy=False) #d=c
+      - d = np.array(c, copy=True, dtype = np.int16) # 깊은 복사
+      - d = np.array(c, copy=False, dtype = np.int16) # copy =False라도 dtype이 바뀌면 깊은 복사
+  - 기본값이 있는 배열 만들기
+    - np.zeros((3,5))   #3행 4열짜리 2차원 배열(요소 값이 다 0.0)
+    - np.ones((2,5), dtype=np.int8)
+    - np.empty((2,3)) #초기값이 메모리 상태에 따른 임의의 값
+  - 연속된 값을 갖는 배열 만들기
+    - np.arange(from, to, by, dtype=None) : from 부터 to앞까지 by씩 건너뛴 값(to 미포함)을 목록으로 n차원 배열을 만듭니다. from생략시 0 by생략시 1
+    - np.linspace(from, to, num) : from부터 to까지 num개 숫자들을 N차원 배열로 만듦
+    - np.random.normal(0,1,100) #평균이 0이고 표준편차가 1인 수 100개로 배열을 만듬
+    - np.random.random(tup) : 0-1사이의 난수 발생 tup
+import matplotlib.pyplot as plt
+plt.plot(x,f) #그래프 그림
+plt.hist(x) #히스토 그램
+  - 배열의 차원 변경하기
+    - a.ravel() # 차원이 풀린 배열을 반환(a가 바뀌는 것은 아님)
+    - a.T # 전치행렬(행과 열을 거꾸로)
+    - a.transpose() # 전치행렬 반환(a는 그대로)
+    - a.resize((1,6))
+  - 기본 연산동작
+    - 사칙연산은 기본 원칙 대로
+    - 행렬 곱 A@B, A.dot(B)
+    - print('전체 합 :',a.sum())
+      print('전체 평균 :',a.mean())
+      print('전체 최소값 :',a.min())
+      print('전체 최대값 :',a.max())
+      print('전체 분산 :',a.var())
+      print('전체 표준편차 :',a.std())
+    - print('a배열의 행별 합(결과는 2열) : ', a.sum(axis=1))
+      print('a배열의 열별 합(결과는 4열) : ', a.sum(axis=0))
+      min max mean std 등 다 적용됨
+    - print(a.cumsum(axis=1)) #행별로 누적합
+      print(a.cumsum(axis=0)) #열별로 누적합
+    - (3차원배열)
+      - b.sum(axis=0) #면은 빼고, 같은 행 같은열끼리 sum
+      - b.sum(axis=1) #행은 빼고 같은 면 같은 열끼리 합
+      - b.sum(axis=2) #열은 빼고 같은 면 같은 행끼리 합
+
+      
+  
