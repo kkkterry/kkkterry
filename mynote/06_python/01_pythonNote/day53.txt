@@ -1,0 +1,30 @@
+- 데이터베이스연동
+  - SQLite 데이터 베이스 연결
+    - 별도의 DBMS 없이 SQL을 이용하여 DB엑세스 가능한 간단한 디스크 기반의 데이터 베이스를 제공하는  c라이브러리
+    - 연결을 위한 사전작업
+      import sqlite3
+      conn = sqlite3.connect('경로\\db폴더')
+      cursor = conn.cursor()
+    - 선언
+      - cursor.execute("SQL문장")
+    - 커밋: conn.commit()
+    - 롤백: conn.rollback()
+    - select 문의 결과를 받는 함수
+      fetchall() - 결과를 모두 받을 때(튜플 list)
+      fetchone() - 결과를 한행씩 받을 때(튜플)
+      fetchmany(n) - 결과를 n행 받을 때
+    - 파라미터 사용하기
+      - qmark 방법 이용
+        - cursor.execute("SELECT * FROM MEMBER WHERE NAME IN (?, ?)",(name1,name2))
+      - named 방법 이용
+        - cursor.execute("SELECT * FROM MEMBER WHERE NAME = :name ",{'name':name1})
+  - ORACLE 데이터 베이스 연결
+    - 연결을 위한 사전작업
+      - import cx_Oracle
+        oracle_dsn = cx_Oracle.makedsn(host="localhost",port=1521,sid='xe')
+        conn = cx_Oracle.connect("scott", "tiger", dsn=oracle_dsn)
+        cursor = conn.cursor()
+      - 나머지는 SQLite와 동일하다
+        
+
+
