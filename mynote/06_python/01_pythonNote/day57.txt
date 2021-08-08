@@ -1,0 +1,41 @@
+day 57
+시각화
+1절 시각화 개요
+2절 matplotlib
+	2.1 패키지 임포트 및 기본 설정
+	2.2 그래프 그리기
+	2.3 그래프 영역 나누기
+		1) subplot()함수로 서브플롯 추가
+		2) subplots() 함수로 서브플롯 그리기
+	2.4 다양한 그래프 그리기
+		1) pyplot 함수들 : https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html
+		2) matplotlib.pyplot.plot() : 선그래프
+		3) pandas.DataFrame.plot()
+		4)plt.scatter() : 산점도
+	2.5 다양한 그래프 그리기
+		1) fill(), fill_between(), scatter()
+		2) bar(), barh(), axvline(), axhline()
+		3) hist(), boxplot(), violinplot()
+	2.6 그래프 커스터마이징
+		1) linestyle, linewidth
+		2) text(), annotate()
+		3) 수학기호
+		4) 축과 눈금
+		5) 축공유
+		6) 범례표시
+3절 Seaborn
+	3.1 데이터 준비하기
+	3.2 미적 속성 설정하기(style, context, palette)
+		1) 그래프 스타일 지정
+		2) 컨텍스트 지정(비율)
+		3) 컬러 팔레트
+	3.3 Seaborn 함수로 그래프 그리기
+		1) Relational plots : 관계형 그래프
+		2) categorical plots: 범주형 그래프
+		3) 쌍관계 그래프
+		4) 밀도 그래프
+		5)회귀 그래프
+	3.4 다중 그래프를 위한 FacetGrid
+
+
+
