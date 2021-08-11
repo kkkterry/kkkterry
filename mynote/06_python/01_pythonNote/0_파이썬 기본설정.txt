@@ -11,50 +11,15 @@ np.set_printoptions(threshold=np.inf) #np.inf=무한데
 # 커널 재시작시 다시 원상복귀
 
 
-
-- 판다스
-https://pypi.python.org/pypi/pandas (package index)
-http://pandas.pydata.org/pandas-docs/stable/api.html (API reference)
-
-시리즈를 문자함 수로 쓰기 위해서: 
-https://pandas.pydata.org/pandas-docs/stable/reference/series.html#string-handling
-
-판다스 디스플레이 옵션
+- 판다스 디스플레이 옵션
 pd.options.display.max_columns = 39
 pd.options.display.max_rows = 40
 
-
-- 데이터 시각화
-matplotlib
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html
-https://matplotlib.org/stable/api/pyplot_summary.html
-
-%matplotlib inline : 주피터 노트북이 실행되는 브라우저에서 시각화를 해라..
-%config InlineBackend.figure_format = "retina" : 그래프 해상도를 높임. 'png'(기본값), 'jpge', 'svg', 'pdf'
 
 #경고 매세지를 안 보이게
 import warnings
 warnings.filterwarnings(action='ignore')
 #warnings.filterwarnings(action='default') 다시 보이게 하고 싶을 경우, 커널재시작도 가능
-
-pyplot 함수
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html
-
-범례
-https://stackoverflow.com/questions/30490740/move-legend-outside-figure-in-seaborn-tsplot 
-
-Seaborn
-공식사이트 :  https://seaborn.pydata.org/
-seaborn API :  https://seaborn.pydata.org/api.html
-
-3) 컬러 팔레트
-https://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette
-https://matplotlib.org/tutorials/colors/colormaps.html
-https://seaborn.pydata.org/tutorial/color_palettes.html
-http://hleecaster.com/wp-content/uploads/2019/12/article2_image9.png
-
-다중 그래프를 위한 FacetGrid
-https://seaborn.pydata.org/tutorial/axis_grids.html#conditional-small-multiples
 
 
 # 데이터 시각화 시작전 설정
@@ -67,3 +32,8 @@ plt.rc('axes',unicode_minus=False)
 #경고 메세지 안보이게 하기
 import warnings
 warnings.filterwarnings(action='ignore')
+
+
+%matplotlib inline : 주피터 노트북이 실행되는 브라우저에서 시각화를 해라..
+%config InlineBackend.figure_format = "retina" : 그래프 해상도를 높임. 'png'(기본값), 'jpge', 'svg', 'pdf'
+

@@ -1,0 +1,80 @@
+- 넘파이 참고할 것
+넘파이 document : https://numpy.org/doc/stable/index.html
+도움말 문서들
+
+인덱싱 : https://docs.scipy.org/doc/numpy/user/basics.indexing.html
+배열 인덱싱 : https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html
+newaxis : https://docs.scipy.org/doc/numpy/reference/constants.html#numpy.newaxis
+
+- 판다스 참고할 것
+https://pypi.python.org/pypi/pandas (package index)
+http://pandas.pydata.org/pandas-docs/stable/api.html (API reference)
+
+시리즈를 문자함 수로 쓰기 위해서
+https://pandas.pydata.org/pandas-docs/stable/reference/series.html#string-handling
+
+범례
+https://stackoverflow.com/questions/30490740/move-legend-outside-figure-in-seaborn-tsplot 
+
+melt
+https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt
+
+Tidy Data 란?
+https://vita.had.co.nz/papers/tidy-data.pdf
+
+- matplotlib
+함수 도움말 참고
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html
+https://matplotlib.org/stable/api/pyplot_summary.html
+
+pyplot 함수들
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html
+
+수학기호
+https://matplotlib.org/users/mathtext.html
+
+- Seaborn
+공식사이트
+https://seaborn.pydata.org/
+
+seaborn API
+https://seaborn.pydata.org/api.html
+
+컬러 팔레트
+https://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette
+https://matplotlib.org/tutorials/colors/colormaps.html
+https://seaborn.pydata.org/tutorial/color_palettes.html
+http://hleecaster.com/wp-content/uploads/2019/12/article2_image9.png
+
+다중 그래프를 위한 FacetGrid
+https://seaborn.pydata.org/tutorial/axis_grids.html#conditional-small-multiples
+
+-정규표현식
+    * https://goo.gl/HLntbd
+    * https://www.nextree.co.kr/p4327
+    * 정규표현식 연습장 : https://regexr.com
+간략 문법:
+    \d : 숫자와 매치, [0-9]와 동일
+    \D : 숫자가 아닌 것
+    \s : whitespace
+    \w : 영문자나 숫자
+    \W : 영문자나 숫자가 아닌 문자
+    .  : 문자하나
+    +  : 1번 이상 반복
+    *  : 0번 이상 반복
+    {2,4} : 2~4회 반복
+    ? : {0,1}의 의미
+    ^ : 시작
+    $ : 끝
+정규표현식의 예 ; 메일 정규표현식, 전화번호 정규표현식, ip주소 정규표현식, 주민번호 정규표현식
+
+- 웹크롤링
+- selectorgadget 반드시 설치하기 (크롬에서 검색)
+
+공식사이트
+https://www.crummy.com/software/BeautifulSoup/
+문서
+https://www.crummy.com/software/BeautifulSoup/bs4/doc.ko/
+
+Selenium을 이용한 웹 데이터 수집
+https://selenium-python.readthedocs.io/index.html
