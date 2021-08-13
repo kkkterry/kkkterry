@@ -1,0 +1,26 @@
+day61
+- 피마 인디언 당뇨발병 예측
+  1. 데이터 셋 생성 vs 전처리
+     - dataset = np.loadtxt('data/pima-indians-diabetes.csv', delimiter=',')
+  2. 모델 구성
+     - model = Sequential()
+       model.add(Dense(12, input_dim=8, activation='relu'))
+  3. 학습과정 설정
+     - model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+  4. 학습시키기
+     - model.fit(x_train, y_train, epochs=1500, batch_size=64)
+  5. 모델 평가하기(학습과정보기, 평가)
+     - model.evaluate(x_test, y_test)
+  6. 모델 사용하기
+     - model.predict(np.array([[6, 148, 72, 35, 0, 33.6, 0.627, 50]]))
+- tensorflow_v1으로 ML_DL
+  1. tesnsorflow v2.x에서 v1사용하기
+     import tensorflow.compat.v1 as tf
+     tf.disable_v2_behavior()
+     sess = tf.Session()를 실행
+     sess.run()을 통해 값을 확인할 수 있음
+  2. tensorflow v1을 이용한 linear regression 을 구현
+     2.1 독립변수 x가 한개
+     2.2 predict를 하기 위한 placeholder 이용
+     2.3 scale이 다른 데이터들의 linear regression을 구현
+
