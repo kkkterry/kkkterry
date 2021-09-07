@@ -1,0 +1,37 @@
+★ Linux 명령어들
+1. 현재 디렉토리 위치 : pwd
+2. 폴더 이동 : cd 폴더명
+         (폴더명 생략시 사용자 홈디렉토리로 이동)
+3. 디렉토리및 파일 보기 : ls
+	ls -a : 숨긴파일 포함
+	ls -l : 상세정보(-rwxrx-r-- : 파일권한)
+	ls -F : 파일종류
+	ls -R : 하위 디렉토리까지
+4. 폴더 생성 : mkdir 폴더명
+       mkdir -p temp/mid/han
+5. 폴더 삭제 : rmdir 폴더명
+       rm -r temp (비워있지 않는 폴더 삭제)
+6. text 파일보기 : cat, more, less(k이전, j다음, q:빠져나감)
+        tail (마지막 부분만)
+7. 복사 : cp original파일 
+           cp -r original폴더 target폴더
+8. 이동 : mv 
+9.  삭제 : rm 파일명
+            rm -r 폴더명
+10. 파일링크 만들기 : ln
+11. 빈파일만들기, 파일생성시간변경 : touch
+12. 내용검색 : grep 검색할단어 파일명
+                  grep -n 검색할단어 파일명
+13. 파일찾기 : find 폴더 -name 파일명
+                  find 폴더 -user 사용자계정명
+14. 실행파일명찾기 : whereis 파일
+
+★ vi 에디터의 세가지 모드
+명령모드 들어가기 : Esc,
+	yy (줄 복사) p/P(붙여넣기)
+	dd(한줄 삭제)  cc(한줄전체 수정)
+입력모드 들어가기 : i(insert), a(append), o(다음줄로)
+콜론모드 들어가기 : Esc - : 
+	wq / wq! (저장하고 나가기)
+	q / q! (저장없이 나가기)
+	숫자 (해당줄로 이동)
